@@ -808,11 +808,7 @@ namespace GTFS
         /// <returns></returns>
         private string WriteFieldDouble(string name, string fieldName, double? value)
         {
-            if(value.HasValue)
-            {
-                return value.Value.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            }
-            return string.Empty;
+            return value.HasValue ? value.Value.ToString("F9", System.Globalization.CultureInfo.InvariantCulture) : string.Empty;
         }
 
         /// <summary>
